@@ -1,8 +1,10 @@
 <section class="cart-show">
+<% if cart.count != 0 %>
 
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
+
 
   <div class="panel panel-default items">
     <table class="table table-bordered">
@@ -49,5 +51,9 @@
       <% end %>
     </div>
   </div>
-
+<% else %>
+  <header>
+  <h2> Your cart ain't got stuff. Bad Capitalist! Try harder <%= link_to 'Buy more possesions!', root_path %></h2>
+  </header>
+  <% end %>
 </section>
