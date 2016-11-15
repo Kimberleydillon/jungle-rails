@@ -1,8 +1,14 @@
 class OrdersController < ApplicationController
-
-
   def show
     @order = Order.find(params[:id])
+    if @user.save
+        # Tell the UserMailer to send a welcome email after save
+        UserMailer.welcome_email(@order).deliver_now
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def create
