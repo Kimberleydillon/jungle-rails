@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to THE JUNGLE </h1>
+    <p>
+      You have successfully signed up and made a purchase to Jungle.com.<br>
+      Here is your order confirmation
+<% @order.line_items.each do |item| %>
+     <h4> <%= item.quantity %>  <%= item.product.name %> - <%= item.total_price_cents %></h4>
+    <% end %>
+
+    </p>
+    <p>
+      To login and lose all your cash money to the evil capitalist empire just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for being a willing minion and have a great spending day/week/year!</p>
+  </body>
+</html>
+
+
+
+
+
+
