@@ -129,5 +129,36 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts "Seeding Users"
+
+User.create!({
+  name: "Adam",
+  password:"<3",
+  email:"adam.k@gmail.com"
+  })
+
+User.create!({
+  name:"Foster",
+  password: "cookies",
+  email:"foster.the.dog@gmail.com"
+  })
+
+puts "Creating reviews ....."
+
+Review.destroy_all
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: "Best stuff I done bought!",
+  rating: 5
+  })
+
+Review.create! ({
+  product_id: 2,
+  user_id: 2,
+  description:"WOOF!",
+  rating: 1
+  })
 
 puts "DONE!"
