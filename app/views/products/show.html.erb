@@ -39,26 +39,27 @@
      <strong>review:</strong>
      <%= review.description %>
    </p>
+    <%= link_to fa_icon('trash'), [review.product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
  <% end %>
 
    <h4>Tell us what you think:</h4>
- <%= form_for [@product, Review.new] do |f| %>
+  <%= form_for [@product, Review.new] do |f| %>
 
-   <p>
-     <%= f.label 'rating' %><br>
-     <%= f.select :rating, options_for_select(0..5) %>
-   </p>
-   <p>
-     <%= f.label 'description' %><br>
-     <%= f.text_area :description %>
-   </p>
-   <p>
-     <%= f.submit 'Create Review' %>
-   </p>
- <% end %>
-
+    <p>
+      <%= f.label 'rating' %><br>
+      <%= f.select :rating, options_for_select(0..5) %>
+    </p>
+    <p>
+      <%= f.label 'description' %><br>
+      <%= f.text_area :description %>
+    </p>
+    <p>
+      <%= f.submit 'Create Review' %>
+    </p>
+  <% end %>
+  </article>
 
  <%= link_to 'Back', products_path %>
-  </article>
+
 
 </section>
