@@ -11,12 +11,12 @@ class UsersController < ApplicationController
       else
         redirect_to '/signup'
         respond_to do |format|
+      end
+    end
   end
-end
 
 private
-
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
   end
-end
